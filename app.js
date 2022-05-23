@@ -15,7 +15,7 @@ app.all('*', (req, res, next) => {
     `Can't ${req.method} ${req.originalUrl} on this server`
   );
 });
-app.get('/', (req, res) => res.sendStatus(200));
+app.get('/', (req, res) => res.json({ message: 'Hello' }));
 const server = http.createServer(app);
 const PORT = process.env.PORT || 4000;
 // Start server
